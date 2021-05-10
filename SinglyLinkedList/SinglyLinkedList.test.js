@@ -200,10 +200,9 @@ describe('SinglyLinkedList', () => {
     it('should `pop` last element if `index` equals to `length - 1`', () => {
       linkedList.push('one');
       linkedList.push('two');
-      console.log(1 === linkedList.length - 1)
       expect(linkedList.remove(1)).toBe('two');
-      // expect(linkedList.length).toBe(1);
-      // expect(linkedList.tail.value).toBe('one');
+      expect(linkedList.length).toBe(1);
+      expect(linkedList.tail.value).toBe('one');
     });
 
     it('should `shift` first element if `index` equals to `0`', () => {
