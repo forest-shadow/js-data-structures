@@ -113,7 +113,7 @@ export class SinglyLinkedList {
    * Set desired Node's value
    * @param {number} index
    * @param {*} value
-   * @return {null|boolean} — returns true if values was setted
+   * @return {boolean|null} — returns true if values was set
    */
   set(index, value) {
     if(index < 0 || index >= this.length || !this.length) return null;
@@ -147,13 +147,13 @@ export class SinglyLinkedList {
 
   /**
    * Remove Node by `index` position
-   * @param index
-   * @return {boolean|*}
+   * @param {number} index
+   * @return {null|*}
    */
   remove(index) {
-    if(index < 0 || index > this.length) return false;
-    if(index === this.length) this.pop();
-    if(index === 0) this.shift();
+    if(index < 0 || index >= this.length) return null;
+    if(index === this.length - 1) return this.pop();
+    if(index === 0) return this.shift();
 
     const previousNode = this.get(index - 1);
     const removedNode = previousNode.next;
