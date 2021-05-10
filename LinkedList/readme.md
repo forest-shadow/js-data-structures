@@ -1,5 +1,6 @@
 # Singly Linked List
 
+---
 > **Linked List** consists of bunch of elements with no indexes who are just pointing to the next element.
 
 > Each element in a Linked List is a **Node**. **Node** stores a piece of data (string, number) but also a reference to next node or if element in the end it refers to `null`. So, Linked Lists consist of Nodes, and each node has a value and a pointer to another Node or `null` .
@@ -25,7 +26,7 @@
 8. `remove` — removing a Node from the Linked List at a specific position.
 9. `reverse` — reverse order of LinkedList elements.
 
-## Singly Linked List
+## Singly Linked List implementation details
 
 - Each `Node` contained one link to `next` element
 
@@ -133,3 +134,17 @@ To implement such behavior we need to go from all LinkedList element's to the en
     - Set the `next` property on the node to be whatever `prev` is
     - Set `prev` to be the `value` of the `node` variable
     - Set the `node` variable to be the `value` of the next variable
+
+## Big O of Singly Linked Lists
+
+Insertion — `O(1)`
+
+Removal — it depends... `O(1)` or `O(N)`
+
+Searching — `O(N)`
+
+Access — `O(N)`
+
+- Singly Linked Lists are an excellent alternative to arrays when insertion and deletion at the beginning are frequently required.
+- Arrays contain a built in index whereas Linked Lists do not. Accessing random element by index is more effective in arrays rather than in Singly Linked list.
+- The idea of a list data structure that consists of Nodes is the foundation for other data structures like Stacks and Queues
