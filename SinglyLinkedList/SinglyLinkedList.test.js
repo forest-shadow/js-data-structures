@@ -1,4 +1,4 @@
-import { SinglyLinkedList } from '../SinglyLinkedList';
+import { SinglyLinkedList } from './SinglyLinkedList';
 
 describe('SinglyLinkedList', () => {
   let linkedList = null;
