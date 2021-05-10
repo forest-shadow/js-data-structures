@@ -8,9 +8,9 @@
 
 **Linked List Data Structure contains 3 properties:** 
 
-- **head** — beginning of the list
-- **tail** — end of the list
-- **length**
+1. `head` — beginning of the list
+2. `tail` — end of the list
+3. `length` — length of the list
 
 ![Linked List Image](linked-list.png "Linked List")
 
@@ -22,7 +22,8 @@
 5. `get` — retrieving a Node by it's position in the Linked List
 6. `set` — changing the value of a Node based on it's position in the Linked List.
 7. `insert` — adding a Node to the Linked List at a specific position.
-8. `remove` — removing a Node from the Linked List at a specific position
+8. `remove` — removing a Node from the Linked List at a specific position.
+9. `reverse` — reverse order of LinkedList elements.
 
 ## Singly Linked List
 
