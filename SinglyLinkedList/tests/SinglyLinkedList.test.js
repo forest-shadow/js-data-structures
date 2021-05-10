@@ -8,13 +8,13 @@ describe('SinglyLinkedList', () => {
       linkedList = new SinglyLinkedList();
     });
 
-    it('should add new `Node` as `head` and `tail` if there are no items in `LinkedList`', () => {
+    it('should add new `Node` as `head` and `tail` if there are no items in `SinglyLinkedList`', () => {
       expect(linkedList.push('test').head.value).toBe('test');
       expect(linkedList.tail.value).toBe('test');
       expect(linkedList.length).toBe(1);
     });
 
-    it('should add new `Node` as `tail` if there are existing items in `LinkedList`', () => {
+    it('should add new `Node` as `tail` if there are existing items in `SinglyLinkedList`', () => {
       linkedList.push('one');
       linkedList.push('two');
       expect(linkedList.head.value).toBe('one');
