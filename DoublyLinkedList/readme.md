@@ -6,6 +6,10 @@
 
 In compare to Singly Linked List, Doubly Linked Lists utilize more memory.
 
+#### Pros:
+
+- Optimized for fast operations on both ends, which ensures constant time insertion and deletion.
+
 More memory === More Flexibility. It's **almost always** such tradeoff in programming.
 
 ## Doubly Linked List implementation details

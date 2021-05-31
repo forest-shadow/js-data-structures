@@ -1,11 +1,24 @@
 # Singly Linked List
 
 ---
-> **Linked List** consists of bunch of elements with no indexes who are just pointing to the next element.
+> **Linked List** consists of bunch of elements with no indexes who are just pointing to the next element. It's a linear collection of elements ordered by links instead of physical placement in memory.
 
 > Each element in a Linked List is a **Node**. **Node** stores a piece of data (string, number) but also a reference to next node or if element in the end it refers to `null`. So, Linked Lists consist of Nodes, and each node has a value and a pointer to another Node or `null` .
 
 - we cannot grab some element with specific index, we just can get elements one-by-one.
+
+#### Pros:
+
+- Flexible capacity. Doesn't require setting initial capacity, can be expanded indefinitely.
+
+#### Cons:
+
+- Costly access and search.
+- Linked list nodes don't occupy continuous memory locations, which makes iterating a linked list somewhat slower than iterating an array.
+
+#### Notable uses:
+
+- Implementation of stacks, queues, and graphs.
 
 **Linked List Data Structure contains 3 properties:** 
 
