@@ -6,7 +6,7 @@ class Node {
   }
 }
 
-class DoublyLinkedList {
+export class DoublyLinkedList {
   constructor() {
     this.tail = null;
     this.head = null;
@@ -23,10 +23,6 @@ class DoublyLinkedList {
     if (!this.length) {
       this.tail = newNode;
       this.head = newNode;
-    } else if (this.length === 1) {
-      newNode.prev = this.head;
-      this.head.next = newNode;
-      this.tail = newNode;
     } else {
       newNode.prev = this.tail;
       this.tail.next = newNode;
@@ -43,14 +39,17 @@ class DoublyLinkedList {
   pop() {
     if (!this.length) return null;
     const poppedNode = this.tail;
-    const prevNode = this.tail.prev;
-    prevNode.next = null;
-    this.tail = prevNode;
-    this.length--;
-    if (!this.length) {
-      this.tail = null;
-      this.head = null;
+
+    if(this.length === 1) {
+      this.head = null
+      this.tail = null
+    } else {
+      this.tail = poppedNode.prev
+      this.tail.next = null
+      poppedNode.prev = null
     }
+    this.length--
+
     return poppedNode.value;
   }
 
@@ -131,12 +130,12 @@ class DoublyLinkedList {
   }
 }
 
-const dLL = new DoublyLinkedList();
-dLL.push('one');
-dLL.push('two');
-dLL.push('three');
-dLL.push('four');
-dLL.unshift('111');
-console.log(dLL);
-console.log(dLL.get(0));
+// const dLL = new DoublyLinkedList();
+// dLL.push('one');
+// dLL.push('two');
+// dLL.push('three');
+// dLL.push('four');
+// dLL.unshift('111');
+// console.log(dLL);
+// console.log(dLL.get(0));
 
