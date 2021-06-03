@@ -60,14 +60,15 @@ export class DoublyLinkedList {
   shift() {
     if (!this.length) return null;
     const shiftedNode = this.head;
-    const newHeadNode = this.head.next;
-    newHeadNode.prev = null;
-    this.head = newHeadNode;
-    this.length--;
-    if (!this.length) {
+    if (this.length === 1) {
       this.head = null;
       this.tail = null;
+    } else {
+      this.head = shiftedNode.next;
+      this.head.prev = null;
+      shiftedNode.next = null;
     }
+    this.length--;
     return shiftedNode.value;
   }
 
@@ -78,16 +79,16 @@ export class DoublyLinkedList {
    */
   unshift(value) {
     const newHeadNode = new Node(value);
-    if(!this.length) {
-      this.tail = newHeadNode;
-      this.head = newHeadNode;
-    }
     if (this.length) {
       const oldHeadNode = this.head;
       oldHeadNode.prev = newHeadNode;
       newHeadNode.next = oldHeadNode;
       this.head = newHeadNode;
+    } else {
+      this.tail = newHeadNode;
+      this.head = newHeadNode;
     }
+
     this.length++;
     return newHeadNode.value;
   }
@@ -95,17 +96,28 @@ export class DoublyLinkedList {
   /**
    * Find node's value by index
    * @param {number} index
-   * @return {null|*} - return value of node's founded by index if it can be founded
+   * @return {Node|null}
    */
   get(index) {
     if (!this.length || index >= this.length) return null;
-    let currentNode = this.head;
-    let currentIndex = 0;
-    while (currentIndex !== index) {
-      currentNode = currentNode.next;
-      currentIndex++;
+    let currentNode, currentIndex;
+    if (this.length / 2 >= index) {
+      currentNode = this.head;
+      currentIndex = 0;
+      while(currentIndex !== index) {
+        currentNode = currentNode.next;
+        currentIndex++;
+      }
+    } else {
+      currentNode = this.tail;
+      currentIndex = this.length - 1;
+      while(currentIndex !== index) {
+        currentNode = currentNode.prev;
+        currentIndex--;
+      }
     }
-    return currentNode.value;
+
+    return currentNode;
   }
 
   /**
@@ -129,13 +141,4 @@ export class DoublyLinkedList {
     return JSON.stringify(this, null, 2);
   }
 }
-
-// const dLL = new DoublyLinkedList();
-// dLL.push('one');
-// dLL.push('two');
-// dLL.push('three');
-// dLL.push('four');
-// dLL.unshift('111');
-// console.log(dLL);
-// console.log(dLL.get(0));
 
