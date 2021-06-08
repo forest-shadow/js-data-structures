@@ -12,17 +12,6 @@
 - In stack terms, to insert is to *push*, and to remove is to *pop*.
 - Often *implemented on top of a linked list* where the head is used for both insertion and removal. Can also be implemented using *dynamic arrays*.
 
-**Stack** might have several properties:
-
-- `first` — pointer to the Head of the Stack
-- `last` — pointer to the Tail of the Stack
-- `size` — the size of the Stack
-
-**Stack** might have several methods:
-
-- `push` — adds node to the head of the Stack
-- `pop` — removes node from the head of the Stack
-
 ### Pros:
 
 - Fast insertions and deletions: `O(1)`.
@@ -41,7 +30,18 @@
 
 ## Stack implementation details
 
-- using *linked list* approach, both `push` and `pop` methods reflects so-called methods of *linked list*.
+**Stack** might have several properties:
+
+- `first` — pointer to the Head of the Stack
+- `last` — pointer to the Tail of the Stack
+- `size` — the size of the Stack
+
+**Stack** might have several methods:
+
+- `push` — adds node to the head of the Stack
+- `pop` — removes node from the head of the Stack
+
+Using *linked list* approach, both `push` and `pop` methods reflects so-called methods of *linked list*.
 
 ### `push` method
 
